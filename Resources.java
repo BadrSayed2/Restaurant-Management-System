@@ -12,7 +12,6 @@ public class Resources {
 	 
 	 public void addSupplier(Supplier supplier){
 			suppliers.add(supplier);
-	
 			suppliers.sort(null);
 	}
 	
@@ -49,8 +48,8 @@ public class Resources {
 		return money;
 	}
 	
-	public float buySomething(Sellable thing) {  
-		float amount = thing.getPrice() * thing.getQuantity() ;
+	public float buySomething(Sellable thing ) {  
+		float amount = thing.getPrice() * thing.getQuantity();
 		money-=amount;
 		return amount;
 	}
