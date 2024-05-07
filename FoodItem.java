@@ -2,11 +2,12 @@
 public class FoodItem implements Sellable , Comparable<Sellable>  {
 
 	//	here the name of the food Objects is the name of ingredient
-	
+	private String name;
 	private float price;
 	public int quantity =0;
 	
-	FoodItem( int price, int quantity ){
+	FoodItem( String n , int price, int quantity ){
+		this.name = n;
 		this.quantity = quantity;
 		this.price = price ;
 	}

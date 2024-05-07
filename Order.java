@@ -22,7 +22,7 @@ public class Order {
 		this.Price = this.calcPrice();
 	}
 	
-	
+	//-----------------------------------------------------------//
 	
 	private float calcPrice() {
 		float sum = 0;

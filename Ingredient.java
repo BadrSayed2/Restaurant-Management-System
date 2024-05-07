@@ -2,7 +2,6 @@ import java.util.LinkedList;
 
 public class Ingredient implements Sellable, Comparable<Sellable> {
 //	here the name of the Ingredient Objects is the name of ingredient
-	LinkedList<Supplier> suppliers = new LinkedList<>();
 	private int quantity;
 	private float price;
 	
@@ -24,18 +23,6 @@ public class Ingredient implements Sellable, Comparable<Sellable> {
 	public void changePrice(float newPrice) {
 		this.price = newPrice;
 		
-	}
-	
-	 //------------------------------------------------------//
-	
-	public void addSupplier(Supplier supplier){
-		this.suppliers.add(supplier);
-		this.suppliers.sort(null);
-	}
-	
-	public void removeSupplier(Supplier supplier){
-		this.suppliers.remove(supplier);
-		this.suppliers.sort(null);
 	}
 	
 	 //------------------------------------------------------//

@@ -1,22 +1,13 @@
+import java.util.LinkedList;
 
-public class Supplier implements Comparable<Supplier> {
+public class Supplier  {
 	
-	private int soldPrice;
+	private String name; 
+	private  LinkedList<Ingredient> ingredients = new LinkedList<>();
 	
-	Supplier(int soldPrice ){
-		this.soldPrice = soldPrice;
+	Supplier(LinkedList<Ingredient> ingredients , String name){
+		this.name = name;
+		this.ingredients = ingredients;
 	}
-	
-	public int compareTo(Supplier other) {
-	       if(this.getsoldPrice() > other.getsoldPrice())
-	    	   return 1;
-	       else if (this.getsoldPrice() == other.getsoldPrice())
-	    	   return 0;
-	       return -1;
-	}
-	
-	public int getsoldPrice() {
-		return this.soldPrice;
-	}
-	
+   
 }

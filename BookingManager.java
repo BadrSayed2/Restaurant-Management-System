@@ -26,6 +26,8 @@ public class BookingManager {
 		menu.remove(food);
 	}
 	
+	//-------------------------------------------------//
+	
 	public static void addTable(Table table) {
 		tables.add(table);
 	}
@@ -35,5 +37,42 @@ public class BookingManager {
 	}
 	
 	//-------------------------------------------------//
+	public static LinkedList <Table> getCurrentlyAvailableTables(){
+		LinkedList <Table> allTables = getTables();
+		LinkedList <Table> currentlyAvailableTables = new LinkedList();
+		for(Table availableTable : allTables ) {
+			if(availableTable.isEmpty()) {
+				currentlyAvailableTables.add(availableTable);
+			}
+		}
+		return currentlyAvailableTables;
+		
+	}
 	
+	public static LinkedList <Table> getNextAvailableTables(){
+		LinkedList <Table> allTables = getTables();
+		LinkedList <Table> nextAvailableTables = new LinkedList();
+		for(Table availableTable : allTables ) {
+			if(availableTable.isNextOrderEmpty()) {
+				nextAvailableTables.add(availableTable);
+			}
+		}
+		
+		return nextAvailableTables;
+	}
+	
+	//-------------------------------------------------//
+	
+	public void createOrder(LinkedList<FoodItem> foodItems ,
+			boolean isDelivary ,int duration, Table table , int price, boolean now) {
+		
+		Order newOrder = new Order(foodItems ,isDelivary ,duration );
+		if(now) {
+			table.bookTable(newOrder);
+		} else {
+			table.bookTableNext(newOrder);
+		}
+		 Resources.importMoney(newOrder.getPrice());
+		
+	}
 }
