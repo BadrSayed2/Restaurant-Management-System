@@ -2,7 +2,7 @@
 import java.util.Date;
 import java.util.LinkedList;
 
-public class Order {
+public class Order implements Pricable {
 
 	private  LinkedList<FoodItem> foodItems = new LinkedList<>();
 	private Date orderStartTime ;
@@ -41,4 +41,13 @@ public class Order {
 	}
 	public float getPrice() { return this.Price; }
 
+	//-----------------------------------------------------------//
+	
+	public int compareTo(Pricable other) {
+		   if( this.getPrice() > other.getPrice() )
+			   return 1;
+	       else if ( this.getPrice() == other.getPrice())
+	    	   return 0;
+	       return -1;
+	}
 }

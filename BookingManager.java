@@ -20,10 +20,12 @@ public class BookingManager {
 	
 	public static void addFoodItemToMenu(FoodItem food) {
 		menu.add(food);
+		menu.sort(null);
 	}
 	
 	public static void removeFoodItemToMenu(FoodItem food) {
 		menu.remove(food);
+		menu.sort(null);
 	}
 	
 	//-------------------------------------------------//
@@ -63,16 +65,4 @@ public class BookingManager {
 	
 	//-------------------------------------------------//
 	
-	public void createOrder(LinkedList<FoodItem> foodItems ,
-			boolean isDelivary ,int duration, Table table , int price, boolean now) {
-		
-		Order newOrder = new Order(foodItems ,isDelivary ,duration );
-		if(now) {
-			table.bookTable(newOrder);
-		} else {
-			table.bookTableNext(newOrder);
-		}
-		 Resources.importMoney(newOrder.getPrice());
-		
-	}
 }
