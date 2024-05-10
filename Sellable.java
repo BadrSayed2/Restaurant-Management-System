@@ -1,24 +1,30 @@
+//package javaapplication4;
+
 
 abstract class Sellable implements  Pricable {
 	
-	protected String name;
+	
+	
 	protected float price;
-	protected int quantity =0;
+	public int quantity =0;
 	
-	public String getName() {
-		return this.name;
-	}
-	
-	public float getPrice() { return this.price * this.getQuantity(); }
+	public float getPrice() { return this.price; }
 	
 	public void changePrice(float newPrice) {
 		this.price = newPrice;
 	}
 
+	
 	public int getQuantity() {
 		return this.quantity;
 	}
+
+   
+
 	
+	//---------------------------------------------------------//
+	
+        @Override
 	public int compareTo(Pricable other) {
 		   if( this.getPrice() > other.getPrice() )
 			   return 1;
@@ -26,5 +32,6 @@ abstract class Sellable implements  Pricable {
 	    	   return 0;
 	       return -1;
 	}
+	
 	
 }

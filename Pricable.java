@@ -1,6 +1,5 @@
 
-public interface Pricable extends Comparable<Pricable> {
+public interface Pricable extends Comparable<Pricable>  {
 	
 	float getPrice();
-
 }
